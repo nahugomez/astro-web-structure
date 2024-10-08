@@ -1,12 +1,23 @@
 ---
 import Layout from '@/layout/Layout.astro';
+import { Button } from '@material-tailwind/react';
 ---
 
 <Layout
   title="Astro Web Structure"
   description="A starter template for Astro Web."
 >
-  <main>
-    <h1>Welcome to Astro Web Structure!</h1>
-  </main></Layout
->
+  <main class="w-screen h-screen flex flex-col justify-center items-center">
+    <h1 class="text-xl font-bold">Welcome to Astro Web Structure!</h1>
+    <p>Powered by Material Tailwind (Beta)</p>
+    <div class="p-6 border rounded-md mt-2">
+      <p class="font-semibold">Buttons</p>
+      <div class="flex gap-4">
+        <Button client:load variant="outline">Outline</Button>
+        <Button client:load variant="solid">Solid</Button>
+        <Button client:load variant="gradient">Gradient</Button>
+        <Button client:load variant="ghost">Ghost</Button>
+      </div>
+    </div>
+  </main>
+</Layout>
